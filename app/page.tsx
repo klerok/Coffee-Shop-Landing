@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <main className={styles.shell}>
       <Header />
-      {/* <Hero />
+      <Hero />
       <Shop />
-      <Footer /> */}
+      <Footer />
     </main>
   );
 }
