@@ -1,17 +1,20 @@
 import styles from "./page.module.css";
 import Image from "next/image";
-import logo from "@/public/images/logo.png";
+import logo from "@/public/images/coffee-icon.png";
 import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
+    <header className={styles.header}>
+      <div className={styles.container}>
         <div className={styles.logo}>
-          <Image src={logo} alt="logo" width={120} height={50} />
+          <Link href="/" className={styles.logoLink}>
+            Flavored <Image src={logo} alt="logo" width={25} height={25} />
+          </Link>
+          <span className={styles.logoSubtitle}>Wake up to something special</span>
         </div>
         <nav className={styles.nav}>
-          <ul>
+          <ul className={styles.navList}>
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -25,11 +28,11 @@ export default function Header() {
               <Link href="/">Contact Us</Link>
             </li>
             <li>
-              <Link href="/">Coffee Shop</Link>
+              <Link href="/" className={styles.navAccent}>Coffee Shop</Link>
             </li>
           </ul>
         </nav>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }
